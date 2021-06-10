@@ -23,11 +23,6 @@ export default {
           icon: 'el-icon-s-grid',
           list: [
             {
-              title: '场景模型管理',
-              name: 'ModelManage',
-              icon: 'el-icon-box'
-            },
-            {
               title: '铸造工艺过程管理',
               name: 'ProcessManage',
               icon: 'el-icon-document'
@@ -36,6 +31,11 @@ export default {
               title: '数字模型创建',
               name: 'CreateDigitalModel',
               icon: 'el-icon-map-location'
+            },
+            {
+              title: '场景模型管理',
+              name: 'ModelManage',
+              icon: 'el-icon-box'
             }
           ]
         },
