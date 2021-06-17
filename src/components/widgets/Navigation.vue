@@ -68,6 +68,11 @@ export default {
               title: '场景负荷计算模型',
               name: 'ComputeModel',
               icon: 'el-icon-s-operation'
+            },
+            {
+              title: '铸造工艺场景环境负荷评价',
+              name: 'Assessment',
+              icon: 'el-icon-c-scale-to-original'
             }
           ]
         }

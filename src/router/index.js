@@ -3,14 +3,15 @@ import Router from 'vue-router'
 import Home from '../components/Home'
 import SceneModel from '../components/digitalModel/wigdets/SceneModel'
 import ModelManage from '../components/digitalModel/ModelManage'
-import ProcessManage from "../components/digitalModel/ProcessManage"
+import ProcessManage from '../components/digitalModel/ProcessManage'
 import CreateDigitalModel from '../components/digitalModel/CreateDigitalModel'
 import BaseDataManage from '../components/sceneInstanceData/BaseDataManage'
 import SceneData from '../components/sceneInstanceData/SceneData'
 import SceneFrameData from '../components/sceneInstanceData/SceneFrameData'
-import SceneDataManage from "../components/sceneInstanceData/SceneDataManage"
+import SceneDataManage from '../components/sceneInstanceData/SceneDataManage'
 import Knowledge from '../components/computeModel/Knowledge'
 import ComputeModel from '../components/computeModel/ComputeModel'
+import Assessment from '../components/computeModel/Assessment'
 import ExcelDisplay from '../components/computeModel/ExcelDisplay'
 
 Vue.use(Router)
@@ -75,6 +76,11 @@ export default new Router({
           path: '/computeModel/excelDisplay',
           name: 'ExcelDisplay',
           component: ExcelDisplay
+        },
+        {
+          path: '/assessment',
+          name: 'Assessment',
+          component: Assessment
         }
       ]
     }
