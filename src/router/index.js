@@ -13,6 +13,7 @@ import Knowledge from '../components/computeModel/Knowledge'
 import ComputeModel from '../components/computeModel/ComputeModel'
 import Assessment from '../components/computeModel/Assessment'
 import ExcelDisplay from '../components/computeModel/ExcelDisplay'
+import BaseInfo from '../components/computeModel/widgets/BaseInfo'
 
 Vue.use(Router)
 

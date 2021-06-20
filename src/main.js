@@ -31,7 +31,7 @@ router.beforeEach((to, from, next) => {
     {url: 'system/all'},
     {url: 'system/tables'}
   ]
-  if (store.state.baseTableMap === null|| store.state.systemTable === null) {
+  if (store.state.baseTableMap === null || store.state.systemTable === null) {
     api.all(args).then(res => {
       console.log(res)
       store.commit('setBaseTableMap', res[0])
