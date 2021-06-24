@@ -1,8 +1,8 @@
 <template>
   <div>
     <el-row>
-      <model-fbx v-if="!sceneVisible" src="static/models/fx0.fbx"></model-fbx>
-      <model-fbx v-if="sceneVisible" src="static/models/fx1.fbx"></model-fbx>
+<!--      <model-fbx v-if="!sceneVisible" src="static/models/fx0.fbx"></model-fbx>-->
+<!--      <model-fbx v-if="sceneVisible" src="static/models/fx1.fbx"></model-fbx>-->
     </el-row>
     <el-row>
       <el-select v-model="currentItem" placeholder="请选择" style="width: 500px">
@@ -54,12 +54,12 @@
           <el-col v-for="item in originalIndexes" :key="item.index" :span="12">
             <el-tag closable style="width: 107px;margin-top: 2px" @close="handleClose(item)">{{item}}</el-tag>
           </el-col>
-          <el-button type="info" @click="rawData":disabled="viewRaw" style="margin: 10px 0 5px 0">
+          <el-button type="info" @click="rawData" :disabled="viewRaw" style="margin: 10px 0 5px 0">
             查看场景过程原始数据
           </el-button>
         </el-col>
         <el-col :span="8" type="flex" justify="space-around" align="middle" style="height: 400px;">
-          <el-button type="success" @click="featureProject":disabled="viewRaw" style="position:relative;top:50%;transform: translateY(-50%);">
+          <el-button type="success" @click="featureProject" :disabled="viewRaw" style="position:relative;top:50%;transform: translateY(-50%);">
             知识驱动构建特征工程
           </el-button>
         </el-col>
@@ -106,7 +106,7 @@ export default {
       nextTitle: '特征贡献度分析',
       count: 0,
       // predictList: [],
-      predictList: ["废钢消耗M", "预热温度", "风量", "生铁消耗", "炉料总量", "废钢消耗", "扒渣次数", "吃砂量", "焦铁比", "焦钢比", "加料次数", "炉体容积", "机械加工余量", "焦炭消耗"],
+      predictList: ['废钢消耗M', '预热温度', '风量', '生铁消耗', '炉料总量', '废钢消耗', '扒渣次数', '吃砂量', '焦铁比', '焦钢比', '加料次数', '炉体容积', '机械加工余量', '焦炭消耗'],
       knowledgeList: [],
       timer: null,
       form: {},
@@ -116,7 +116,7 @@ export default {
       indexForm: []
     }
   },
-  beforeRouteEnter(to, from, next) {
+  beforeRouteEnter (to, from, next) {
     next(vm => {
       let params = {
         categoryId: 5,
@@ -129,8 +129,8 @@ export default {
     })
   },
   watch: {
-    currentItem(newValue, oldValue){
-      if (newValue!=='') {
+    currentItem (newValue, oldValue) {
+      if (newValue !== '') {
         this.viewRaw = false
       }
       this.sceneVisible = !this.sceneVisible
@@ -160,15 +160,15 @@ export default {
     }
   },
   methods: {
-    rawData() {
+    rawData () {
       this.viewTrain = false
       this.$router.push({name: 'ExcelDisplay', params: {sceneDataTitle: this.sceneData.title}})
     },
-    enterFeature() {
+    enterFeature () {
       // this.doTrain = false
       this.viewTrain = true
     },
-    featureProject() {
+    featureProject () {
       let args = {
         url: 'knowledge/inference',
         params: {
@@ -192,7 +192,7 @@ export default {
           this.knowledgeList = res.knowledgeList
           this.$notify({
             title: '构建成功',
-            message: '共命中了'+this.count+'条规则！',
+            message: '共命中了' + this.count + '条规则！',
             type: 'success',
             duration: 5700
           })
@@ -218,11 +218,11 @@ export default {
         }
       })
     },
-    trainData() {
+    trainData () {
       this.viewTrain = false
       this.$router.push({name: 'ExcelDisplay', params: {sceneDataTitle: this.sceneData.title + 'train'}})
     },
-    resolutionIterative() {
+    resolutionIterative () {
       let args = {
         url: 'sceneData/compute',
         params: {
@@ -239,13 +239,13 @@ export default {
         }
       })
     },
-    modelFeature() {
+    modelFeature () {
       this.featureExplain = true
     },
-    envLoadCompute() {
+    envLoadCompute () {
       this.computeVisible = true
     },
-    compute() {
+    compute () {
       console.log(this.form)
       console.log(this.sceneData.title)
       let args = {
@@ -259,7 +259,7 @@ export default {
         this.predictValue = res
       })
     },
-    changeImage() {
+    changeImage () {
       if (this.explainTitle === '模型特征总体分析') {
         this.explainTitle = '特征贡献度分析'
         this.featureImage = '../static/特征贡献度分析.png'
@@ -270,12 +270,12 @@ export default {
         this.nextTitle = '特征贡献度分析'
       }
     },
-    handleClose(item) {
-      this.originalIndexes.splice(this.originalIndexes.indexOf(item), 1);
+    handleClose (item) {
+      this.originalIndexes.splice(this.originalIndexes.indexOf(item), 1)
     },
-    handleClose2(item) {
-      this.trainIndexes.splice(this.trainIndexes.indexOf(item), 1);
-    },
+    handleClose2 (item) {
+      this.trainIndexes.splice(this.trainIndexes.indexOf(item), 1)
+    }
   }
 }
 </script>

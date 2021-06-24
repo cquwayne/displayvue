@@ -8,7 +8,9 @@
         <Navigation></Navigation>
       </el-aside>
       <el-main>
-        <router-view></router-view>
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
       </el-main>
     </el-container>
   </el-container>

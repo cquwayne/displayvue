@@ -143,7 +143,7 @@ export default {
         sceneData: this.sceneData,
         inputFrameDataId: row.id
       }
-      this.$router.push({name:'SceneFrameData', params:params})
+      this.$router.push({name: 'SceneFrameData', params: params})
     },
     goBack () {
       window.history.back()

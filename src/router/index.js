@@ -14,6 +14,7 @@ import ComputeModel from '../components/computeModel/ComputeModel'
 import Assessment from '../components/computeModel/Assessment'
 import ExcelDisplay from '../components/computeModel/ExcelDisplay'
 import BaseInfo from '../components/computeModel/widgets/BaseInfo'
+import Definition from '../components/computeModel/widgets/Definition'
 
 Vue.use(Router)
 
@@ -81,7 +82,19 @@ export default new Router({
         {
           path: '/assessment',
           name: 'Assessment',
-          component: Assessment
+          component: Assessment,
+          children: [
+            {
+              path: '/baseInfo',
+              name: 'BaseInfo',
+              component: BaseInfo
+            },
+            {
+              path: '/definition',
+              name: 'Definition',
+              component: Definition
+            }
+          ]
         }
       ]
     }
