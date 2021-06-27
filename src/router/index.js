@@ -11,10 +11,13 @@ import SceneFrameData from '../components/sceneInstanceData/SceneFrameData'
 import SceneDataManage from '../components/sceneInstanceData/SceneDataManage'
 import Knowledge from '../components/computeModel/Knowledge'
 import ComputeModel from '../components/computeModel/ComputeModel'
-import Assessment from '../components/computeModel/Assessment'
 import ExcelDisplay from '../components/computeModel/ExcelDisplay'
-import BaseInfo from '../components/computeModel/widgets/BaseInfo'
-import Definition from '../components/computeModel/widgets/Definition'
+import Assessment from '../components/Assessment/Assessment'
+import BaseInfo from '../components/Assessment/widgets/BaseInfo'
+import Definition from '../components/Assessment/widgets/Definition'
+import CraftCollection from '../components/Assessment/CraftCollection'
+import MatterManage from '../components/Assessment/MatterManage'
+import EvaluationManage from '../components/Assessment/EvaluationManage'
 
 Vue.use(Router)
 
@@ -80,12 +83,17 @@ export default new Router({
           component: ExcelDisplay
         },
         {
+          path: '/craftCollection',
+          name: 'CraftCollection',
+          component: CraftCollection
+        },
+        {
           path: '/assessment',
           name: 'Assessment',
           component: Assessment,
           children: [
             {
-              path: '/baseInfo',
+              path: '/',
               name: 'BaseInfo',
               component: BaseInfo
             },
@@ -95,6 +103,16 @@ export default new Router({
               component: Definition
             }
           ]
+        },
+        {
+          path: '/matterManage',
+          name: 'MatterManage',
+          component: MatterManage
+        },
+        {
+          path: '/evaluationManage',
+          name: 'EvaluationManage',
+          component: EvaluationManage
         }
       ]
     }

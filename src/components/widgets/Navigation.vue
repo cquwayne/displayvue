@@ -68,11 +68,32 @@ export default {
               title: '场景负荷计算模型',
               name: 'ComputeModel',
               icon: 'el-icon-s-operation'
+            }
+          ]
+        },
+        {
+          title: '铸造工艺场景环境负荷评价',
+          icon: 'el-icon-s-grid',
+          list: [
+            {
+              title: '工艺集合',
+              name: 'CraftCollection',
+              icon: 'el-icon-finished'
             },
             {
-              title: '铸造工艺场景环境负荷评价',
+              title: '新建评价工艺',
               name: 'Assessment',
               icon: 'el-icon-c-scale-to-original'
+            },
+            {
+              title: '元物质管理',
+              name: 'MatterManage',
+              icon: 'el-icon-s-promotion'
+            },
+            {
+              title: '元评价管理',
+              name: 'EvaluationManage',
+              icon: 'el-icon-info'
             }
           ]
         }
@@ -102,7 +123,7 @@ export default {
         font-size: 18px;
         display: block;
         padding: 0 15px;
-        margin: 15px 0;
+        margin: 10px 0;
         color: #ccc;
       }
       .router-link-active{

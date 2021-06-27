@@ -44,6 +44,21 @@ export default {
       } else if (num === 1) {
         this.active = num
         this.$router.push({name: 'Definition'})
+      } else if (num === 2) {
+        this.active = num
+        this.$router.push({name: 'Definition'})
+      } else if (num === 3) {
+        this.active = num
+        this.$router.push({name: 'Definition'})
+      } else if (num === 4) {
+        this.active = num
+        this.$router.push({name: 'Definition'})
+      } else if (num === 5) {
+        this.active = num
+        this.$router.push({name: 'Definition'})
+      } else {
+        this.active = num
+        this.$router.push({name: 'Definition'})
       }
     },
     before () {
@@ -62,6 +77,16 @@ export default {
       if (newValue === 0) {
         this.$router.push({name: 'BaseInfo'})
       } else if (newValue === 1) {
+        this.$router.push({name: 'Definition'})
+      } else if (newValue === 2) {
+        this.$router.push({name: 'Definition'})
+      } else if (newValue === 3) {
+        this.$router.push({name: 'Definition'})
+      } else if (newValue === 4) {
+        this.$router.push({name: 'Definition'})
+      } else if (newValue === 5) {
+        this.$router.push({name: 'Definition'})
+      } else {
         this.$router.push({name: 'Definition'})
       }
     }
